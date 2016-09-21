@@ -18,7 +18,7 @@ void InitGL ( )     // Inicializamos parametros
 	//glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 }
 
-void display ( void )   // Funcion donde se dibuja
+void display(void)   // Funcion donde se dibuja
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);	// Limiamos pantalla y Depth Buffer
 	glMatrixMode(GL_MODELVIEW);
@@ -26,8 +26,8 @@ void display ( void )   // Funcion donde se dibuja
 
 	glPushMatrix();
 	glLineWidth(1.0);
-	
-	
+
+
 	/*glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //Dibuja solo la línea
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //Dibuja relleno*/
 
@@ -56,7 +56,13 @@ void display ( void )   // Funcion donde se dibuja
 	glVertex3f(322, 622, -0.1);
 	glEnd();
 
-
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	glBegin(GL_POLYGON);
+	glVertex3f(100, 300, -0.1);
+	glVertex3f(300, 300, -0.1);
+	glVertex3f(300, 200, -0.1);
+	glVertex3f(100, 200, -0.1);
+	glEnd();
 
 	glPopMatrix();
 	glutSwapBuffers ( );
